@@ -1,0 +1,139 @@
+/* --- Global Theme & Utility Styles --- */
+:root {
+    --primary-blue: #007bff; /* Matching the bright blue banner */
+    --text-dark: #333;
+    --text-light: #555; /* For the gray body text */
+    --bg-light: #f9f9f9; /* Subtle background for the page */
+    --card-bg: #ffffff;
+}
+
+/* Ensure the wrapper uses the subtle background */
+.medical-services-page-wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-light);
+}
+
+/* --- 1. Header Section (Matching the Blue Banner) --- */
+.blue-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: clamp(1.8em, 5vw, 2.5em); /* Responsive sizing */
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: clamp(0.9em, 2vw, 1.1em);
+    font-weight: 300;
+}
+
+/* --- 2. Services Grid Layout Container --- */
+.services-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px; 
+}
+
+.services-grid {
+    display: grid;
+    gap: 30px;
+    padding: 40px 0;
+    /* Default for mobile (1 column) */
+    grid-template-columns: 1fr;
+}
+
+/* --- 3. Service Card Styling --- */
+.service-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-top: 5px solid var(--primary-blue); /* Subtle theme accent */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--primary-blue); /* Icon color */
+}
+
+.service-title {
+    color: var(--text-dark);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    color: var(--text-light); /* Matching the light gray text from the original theme */
+    line-height: 1.6;
+}
+
+/* --- 4. Call-to-Action Footer --- */
+.footer-cta {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cta-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none; /* Removes the default blue underline */
+    display: inline-block; /* Helps with padding and margin */
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* A darker shade of blue on hover */
+}
+
+/* --- 5. Responsiveness (Media Queries) --- */
+
+/* Tablet layout (2 columns) */
+@media (min-width: 600px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop layout (3 columns) */
+@media (min-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large desktop layout (4 columns) */
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+}
